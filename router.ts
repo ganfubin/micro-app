@@ -8,14 +8,14 @@ export const routerListener = (apps: App[]) => {
   const pushState = history.pushState
   history.pushState = (...args) => {
     pushState.apply(history, args)
-    handler(apps)
+    changeApp(apps)
   };
 
-  window.addEventListener('popstate', () => handler(apps));
-  window.addEventListener('load', () => handler(apps));
+  window.addEventListener('popstate', () => changeApp(apps));
+  window.addEventListener('load', () => changeApp(apps));
 }
 
-const handler = async (apps: App[]) => {
+const changeApp = async (apps: App[]) => {
   const pathname = location.pathname
 
   const app = apps.find((app) => pathname.includes(app.name))
