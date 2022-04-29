@@ -44,6 +44,11 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
+            options: {
+              attributes: {
+                name: `base-app`
+              },
+            }
           },
           {
             loader: 'css-loader',

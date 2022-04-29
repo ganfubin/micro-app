@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom'
 import './style.less'
-import {registerMicroApps, runMicroApp} from '../../../register'
+import {registerMicroApps, runMicroApp} from '../../../index'
 
 import App from "./App";
 

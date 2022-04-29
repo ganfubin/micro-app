@@ -22,7 +22,8 @@ const handler = async (apps: App[]) => {
 
   if (!app) return
 
-  await instance?.unmount?.()
+  // bug 这里销毁的应该是前一个app
+  await appUnmount(app)
 
   const dom = await getEntryDom(app.entry)
 
@@ -60,7 +61,6 @@ const runScripts = (scripts: string[]): any => {
   const {scope} = new ProxySandbox()
   const module = {exports: {}}, exports = module.exports;
   ;(function (window) {
-
     scripts.forEach((script) => {
       eval(script)
     })
@@ -68,3 +68,20 @@ const runScripts = (scripts: string[]): any => {
 
   return module.exports
 }
+
+const appUnmount = async (app: App) => {
+
+  // 删除样式
+  //app.name
+  [...document.getElementsByTagName('style')].forEach((item) => {
+    if (item.getAttribute('name') !== 'base-app') {
+      item.remove()
+    }
+  })
+
+  await instance?.unmount?.()
+}
+
+
+
+

@@ -1,5 +1,6 @@
-import {registerMicroApps} from './register'
+import {registerMicroApps, runMicroApp} from './register'
 
 export {
-  registerMicroApps
+  registerMicroApps,
+  runMicroApp
 }
