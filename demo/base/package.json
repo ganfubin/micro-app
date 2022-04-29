@@ -1,0 +1,50 @@
+{
+  "name": "micro-app-base",
+  "version": "0.1.0",
+  "author": "ganfubin <1209711358@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --config  webpack.config.js --watch --mode development"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.15.0",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.9",
+    "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-loader": "^8.0.2",
+    "core-js": "^3.16.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^7.25.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.2",
+    "svgo-loader": "^3.0.0",
+    "ts-loader": "^9.1.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "antd": "^4.20.1",
+    "bizseer-svg-icon": "0.0.25",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.0"
+  }
+}
